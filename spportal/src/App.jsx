@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import Favicon from "react-favicon";
 
 import { Admin, Resource, houseLightTheme } from "react-admin";
@@ -8,10 +7,10 @@ import englishMessages from "ra-language-english";
 import authProvider from "./Component/authProvider";
 import { dataProvider } from "./Component/dataProvider";
 import LoginPage from "./Component/LoginPage";
-import { MyAuthCallbackPage } from "./Component/MyAuthCallbackPage";
 import serviceproviders from "./serviceproviders";
 import { AmfaLayout } from "./AmfaLayout";
 import { useFeConfigs } from "./configs/FeConfigProvider";
+import { BrowserRouter } from "react-router-dom";
 
 
 const messages = {
@@ -23,18 +22,6 @@ const i18nProvider = polyglotI18nProvider((locale) => messages[locale], "en", {
 });
 
 export const App = () => {
-  // useEffect(() => {
-  //   const fetchBranding = async () => {
-  //     const res = await fetch('/branding.json')
-  //     const data = await res.json()
-  //     setBranding(data)
-  //     document.title = data.app_title;
-  //   }
-  //   fetchBranding()
-  //   document.title = '';
-
-  // }, []);
-
   const branding = useFeConfigs();
 
   if (branding) {
@@ -64,20 +51,21 @@ export const App = () => {
     return (
       <>
         <Favicon url={branding.fav_icon_url} />
-        <Admin
-          disableTelemetry
-          theme={userTheme}
-          authProvider={authProvider}
-          dataProvider={dataProvider}
-          loginPage={LoginPage}
-          layout={AmfaLayout}
-          locale="en" // Add this...
-          i18nProvider={i18nProvider}
-        >
-          requireAuth={true}
-          authCallbackPage={MyAuthCallbackPage}
-          <Resource name="serviceproviders" {...serviceproviders} />
-        </Admin>
+        <BrowserRouter>
+          <Admin
+            theme={userTheme}
+            disableTelemetry
+            authProvider={authProvider}
+            dataProvider={dataProvider}
+            loginPage={LoginPage}
+            layout={AmfaLayout}
+            locale="en" // Add this...
+            i18nProvider={i18nProvider}
+            requireAuth={true}
+          >
+            <Resource name="serviceproviders" {...serviceproviders} />
+          </Admin>
+        </BrowserRouter>
         <div
           style={{
             position: "fixed",

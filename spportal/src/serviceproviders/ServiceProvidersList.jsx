@@ -266,13 +266,13 @@ const MyContent = ({ data, identity }) => {
           {data &&
             data.map((item) =>
               removedSp?.filter((el) => el === item.id).length ? null : (
-                <Grid item xs={12} sm={6} md={6} lg={4} key={item.id}>
+                <Grid size={{ xs: 12, sm: 6, md:6, lg:4 }} key={item.id}>
                   <ServiceDropDown data={item} key={item.id} />
                 </Grid>
               )
             )}
           {removedSp?.length > 0 && (
-            <Grid item xs={12} sm={6} md={6} lg={4} key="newSp">
+            <Grid size={{ xs: 12, sm: 6, md:6, lg:4 }} key="newSp">
               <AddServiceProvider />
             </Grid>
           )}
