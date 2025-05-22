@@ -184,8 +184,21 @@ export const handler = async (event) => {
             const isValidUuid = await checkSessionId(payload, payload.uuid, dynamodb);
             console.log('isValidUuid', isValidUuid);
             if (isValidUuid) {
-              return await deleteTotp(headers, payload.email, amfaConfigs,
-                requestId, client, true, dynamodb, amfaBrandings.email_logo_url, amfaBrandings.service_name, false);
+              const provider_id = await getProviderId();
+
+              return await deleteTotp(
+                headers,
+                payload.email,
+                amfaConfigs,
+                requestId,
+                client,
+                true,
+                dynamodb,
+                amfaBrandings.email_logo_url,
+                amfaBrandings.service_name,
+                false,
+                provider_id
+              );
             }
           }
           break;
