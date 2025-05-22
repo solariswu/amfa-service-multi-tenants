@@ -134,8 +134,9 @@ export const handler = async (event) => {
             return responseWithRequestId(422, error, requestId);
           }
         case 'admindeletetotp':
+          const provider_id = await getProviderId();
           return await deleteTotp(headers, payload.email, amfaConfigs,
-            requestId, client, true, dynamodb, amfaBrandings.email_logo_url, amfaBrandings.service_name, true);
+            requestId, client, true, dynamodb, amfaBrandings.email_logo_url, amfaBrandings.service_name, true, provider_id);
         case 'admindeleteuser':
           {
             console.log('asm delete user payload', payload);
