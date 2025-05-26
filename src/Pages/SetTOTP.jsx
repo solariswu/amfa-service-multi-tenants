@@ -121,7 +121,7 @@ const CONTENT = () => {
     // const totpUri = "otpauth://totp/MFA:" +  + "?secret=" + secretCode + "&issuer=amfa";
     const totpUri = window.otplib.authenticator.keyuri(
       location.state.email,
-      config?.mobile_token_svc_name,
+      config?.branding.mobile_token_svc_name,
       secretCode
     );
 

@@ -468,7 +468,7 @@ export const OTP = () => {
       },
       t: {
         title: 'Mobile TOTP',
-        content: data?.mobileToken ? `${config?.mobile_token_svc_name ? config.mobile_token_svc_name : 'amfa'}\n${maskedEmail}` : null,
+        content: data?.mobileToken ? `${config?.branding.mobile_token_svc_name ? config.branding.mobile_token_svc_name : 'amfa'}\n${maskedEmail}` : null,
       },
     };
 

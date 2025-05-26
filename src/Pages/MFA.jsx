@@ -301,8 +301,8 @@ const MFAContent = () => {
         title: 'Mobile TOTP',
         content: mobileToken
           ? `${
-              config?.mobile_token_svc_name
-                ? config.mobile_token_svc_name
+              config?.branding.mobile_token_svc_name
+                ? config.branding.mobile_token_svc_name
                 : 'amfa'
             }\n${maskedEmail}`
           : null,

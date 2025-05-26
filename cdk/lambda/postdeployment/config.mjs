@@ -20,7 +20,6 @@ export const amfaConfigs = {
         "t"
     ],
     "user_registration_default_group": "user",
-    "mobile_token_svc_name": serviceName,
     "update_profile_force_mobile_token_first_if_registered": true,
     "COMMENT-totp": "The totp secrets and integration provider ID are located in the AWS secret manager",
     "enable_password_expire": true,
@@ -33,6 +32,7 @@ export const amfaConfigs = {
 export const amfaBrandings =
 {
     service_name: serviceName,
+    mobile_token_svc_name: serviceName,
     "COMMENT-NOTE logo size": "250x50",
     logo_url: "https://downloads.apersona.com/logos/logo-here_250x50.png",
     "COMMENT-NOTE email_logo size": "250x50",
