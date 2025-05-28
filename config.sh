@@ -11,7 +11,7 @@ export TENANT_NAME='' ## example 'Company Name',.
 export ADMIN_EMAIL='' ## example 'installer.admin@yourdomain.com' (MUST BE THE SAME AS AWS ADMIN USER!!)
 
 # Additional Installer / Admin, OPTIONAL
-export INSTALLER_EMAIL='' ## example 'admin2@yourdomain.com'
+export INSTALLER_EMAIL='' ## example 'admin2@yourdomain.com' (MUST BE AN AWS ADMIN USER!!)
 
 # DNS domain and hosted zone id, REQUIRED
 export ROOT_DOMAIN_NAME='' ## example 'yourdomain.com' (must be lower case, no spaces.)
