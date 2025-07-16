@@ -5,8 +5,8 @@ BOLD="\033[1m"
 YELLOW="\033[38;5;11m"
 NC='\033[0m' # No Color
 
-APERSONAIDP_REPO_NAME=aPersona-Identity-for-AWS-End-User-Services
-APERSONAADM_REPO_NAME=aPersona-Identity-for-AWS-Admin-Portal
+APERSONAIDP_REPO_NAME=amfa-service-multi-tenants
+APERSONAADM_REPO_NAME=amfa-admin-portal-multi-tenants
 
 amfaName=$(jq -rc '.name' $APERSONAIDP_REPO_NAME/package.json)
 amfaVersion=$(jq -rc '.version' $APERSONAIDP_REPO_NAME/package.json)
