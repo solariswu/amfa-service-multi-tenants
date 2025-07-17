@@ -149,6 +149,13 @@ if aws sts get-caller-identity >/dev/null; then
     cd $APERSONAIDP_REPO_NAME
     npm install >/dev/null 2>&1
 
+    ## test proposal only, min
+    npm run build
+    npm run lambda-build
+    cd spportal
+    npm i
+    npm run build
+
     export SP_PORTAL_URL="https://login."$TENANT_ID"."$ROOT_DOMAIN_NAME
 
     #get region and account by EC2 info
