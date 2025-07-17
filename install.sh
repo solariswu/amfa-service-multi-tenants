@@ -342,6 +342,11 @@ if aws sts get-caller-identity >/dev/null; then
     echo "Admin Portal Hosted Zone ID is $ADMINPORTAL_HOSTED_ZONE_ID"
 
     npm install --legacy-peer-deps >/dev/null 2>&1
+
+    # test proposal, min
+    npm run build
+    npm run lambda-build
+
     # npm run build
     npm run cdk-build
 
