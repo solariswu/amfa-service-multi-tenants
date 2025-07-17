@@ -142,9 +142,6 @@ if aws sts get-caller-identity >/dev/null; then
         exit 1
     fi
 
-    APERSONAIDP_REPO_NAME=aPersona-Identity-for-AWS-End-User-Services
-    APERSONAADM_REPO_NAME=aPersona-Identity-for-AWS-Admin-Portal
-
     source ~/.bashrc
     NODE_OPTIONS=--max-old-space-size=8192
 
