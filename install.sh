@@ -155,6 +155,7 @@ if aws sts get-caller-identity >/dev/null; then
     cd spportal
     npm i
     npm run build
+    cd ..
 
     export SP_PORTAL_URL="https://login."$TENANT_ID"."$ROOT_DOMAIN_NAME
 
