@@ -380,6 +380,8 @@ if aws sts get-caller-identity >/dev/null; then
         aws cloudfront create-invalidation --distribution-id $ADMINPORTAL_DISTRIBUTION_ID --paths /amfaext.js >/dev/null 2>&1
 
         aws cognito-idp admin-create-user --username $ADMIN_EMAIL --user-attributes Name=email,Value=$ADMIN_EMAIL Name=email_verified,Value=true --desired-delivery-mediums EMAIL --user-pool-id $ADMINPORTAL_USERPOOL_ID >/dev/null 2>&1
+        aws cognito-idp create-group --group-name admin --user-pool-id $ADMINPORTAL_USERPOOL_ID >/dev/null 2>&1
+        aws cognito-idp admin-add-user-to-group --user-pool-id $ADMINPORTAL_USERPOOL_ID --username $ADMIN_EMAIL --group admin >/dev/null 2>&1
     fi
 
     cd ..
